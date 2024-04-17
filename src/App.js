@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+
+import React from 'react';
+import './index.css';
+
+const App = () => {
+  const items = [
+    { id: 1, name: 'Melody Songs'},
+    { id: 2, name: 'Devotional Songs' },
+    { id: 3, name: 'Vibe Songs' },
+    { id: 4, name: 'Sad Songs' },
+    { id: 5, name: 'Love Songs' }
+  ];
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <h1>Spotify</h1>
+      <ul className="list">
+        {items.map(item => (
+          <li key={item.id}>{item.name}</li>
+        ))}
+      </ul>
     </div>
   );
-}
+};
 
 export default App;
